@@ -21,17 +21,23 @@ minum=prompt('Introduce un Nº entre 0 y 100');
 
 if(aleatorio>minum){
 
-    alert('Es mas alto');
+   // alert('Es mas alto');
+   document.write("es mas alto" + "<br/>");
 }
 
 if(aleatorio<minum){
 
-    alert('Es mas bajo');
+   // alert('Es mas bajo');
+   document.write("es mas bajo" + "<br/>");
 }
+intentos++;
 
 }while(aleatorio!=minum);
 
-alert('Es correcto');
+
+
+//alert('Es correcto. Has consumido ' + intentos + ' intentos ');
+document.write('Es correcto. Has consumido ' + intentos + ' intentos ');
 
     </script>
 </head>
