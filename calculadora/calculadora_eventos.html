@@ -43,6 +43,8 @@ var cifra ="";
 
 var acumulado = 0;
 
+let p_operacion = true
+
 var sumar = false;
 
 var restar = false;
@@ -55,17 +57,28 @@ function display_numeros(numero){
 }
 
 function suma(){
+ if (restar){
 
+  acumulado=acumulado-parseInt(cifra);
+
+document.getElementById("display").value=acumulado;
+
+ }else{
   acumulado=acumulado+parseInt(cifra);
 
-  document.getElementById("display").value=acumulado;
+document.getElementById("display").value=acumulado;
+ }
+  
 
   cifra ="";
 
   sumar = true;
+  p_operacion=false;
 }
 
 function resta(){
+  
+  if (p_operacion==false){
   if (sumar){
     acumulado=acumulado+parseInt(cifra);
 
@@ -75,7 +88,10 @@ function resta(){
 
   document.getElementById("display").value=acumulado;
   }
-  
+  }else {
+    acumulado=parseInt(cifra);
+    p_operacion=false;
+  }
 
   cifra ="";
   sumar = false;
@@ -92,6 +108,9 @@ function resultado (){
 document.getElementById("display").value=acumulado-parseInt(cifra);
 }
 
+acumulado= parseInt(document.getElementById("display").value);
+
+cifra=0;
 }
 
 
