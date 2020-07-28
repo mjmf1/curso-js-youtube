@@ -11,28 +11,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
     <script>
       $(document).ready(function () {
+        $("img").mouseover(function () {
+          $(this).animate(
+            {
+              opacity: 1,
+            },
+            250
+          );
+        });
 
-        $("#imagen").click(function(){
-  
-          $(this).animate({
+		$("img").mouseout(function () {
+          $(this).animate(
+            {
+              opacity: 0.5,
+            },
+            250
+          );
+        });
 
-		   marginLeft:"+=150px"
-
-		  }, 500)
-
-
-
-
-		  });
-
-
-	  });
-
-
+      });
     </script>
   </head>
 
   <body>
-    <img src="img2/coche2.png" width="300" height="200" id="imagen" />
+    <img src="img2/1.jpg" width="300" height="200" id="imagen" />
   </body>
 </html>
