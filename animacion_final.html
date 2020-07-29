@@ -29,28 +29,28 @@
 
     <script>
       $(document).ready(function () {
-     
-	    $("#menu").hover(function(){
+        $("#menu").hover(
+          function () {
+            $(this).stop().animate(
+              {
+                left: "0px",
+              },
+              500,
+              "easeInSine"
+            ); //termina function animate
+          },
 
-          $(this).stop().animate({
-
-			 left:"0px" 
-		  }, 500, "easeInSine") //termina function animate
-		},
-		
-		function(){
-            
-		 $(this).stop().animate({
-
-           left:"-92px"
-
-		 }, 1500, "easeInBounce");
-
-		});
-
-
-
-	  });
+          function () {
+            $(this).stop().animate(
+              {
+                left: "-92px",
+              },
+              1500,
+              "easeInBounce"
+            );
+          }
+        );
+      });
     </script>
   </head>
   <body>
