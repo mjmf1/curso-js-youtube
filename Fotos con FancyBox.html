@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fotos con FancyBox</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="fancybox/jquery.fancybox-1.3.4.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+    <script src="fancybox/jquery.fancybox-1.3.4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#galeria a").fancybox({
+          overlayColor: "#797e79",
+          overlayOpacity: 0.6,
+          transitionIn: "elastic",
+          transitionOut: "elastic",
+
+          titlePosition: "Outside",
+
+          cyclic: true,
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="cabecera">
+      <img src="img2/pildoras_1.png" />
+      <p class="logo">Píldoras Informáticas</p>
+    </div>
+
+    <div class="contenido">
+      <div class="principal">
+        <h1>Fotos</h1>
+        <div id="galeria">
+          <a
+            href="img2/paisaje1.JPG"
+            rel="gallery"
+            title="Bonito paisaje nocturno"
+            ><img
+              src="img2/paisaje1.JPG"
+              width="70"
+              height="70"
+              alt="Paisaje nocturno"
+          /></a>
+          <a href="img2/2.jpg" rel="gallery" title="Vacas pasando la vida"
+            ><img src="img2/2.jpg" width="70" height="70" alt="vacas"
+          /></a>
+          <a
+            href="img2/paisaje2.jpg"
+            rel="gallery"
+            title="Palemeras al atradecer"
+            ><img src="img2/paisaje2.jpg" width="70" height="70" alt="Palmeras"
+          /></a>
+          <a href="img2/paisaje3.jpg" rel="gallery" title="Montañas"
+            ><img src="img2/paisaje3.jpg" width="70" height="70" alt="Montañas"
+          /></a>
+          <a href="img2/3.jpg" rel="gallery" title="Pico costero"
+            ><img src="img2/3.jpg" width="70" height="70" alt="Pico"
+          /></a>
+          <a href="img2/paisaje4.jpg" rel="gallery" title="Atradecer"
+            ><img
+              src="img2/paisaje4.jpg"
+              width="70"
+              height="70"
+              alt="atardecer"
+          /></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
