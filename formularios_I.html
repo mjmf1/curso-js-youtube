@@ -26,21 +26,49 @@
 
     <script>
       $(document).ready(function () {
-           
-      //$("#comprobar").click(Comprobar_datos);
 
-      $("#form_datos").submit(function(){
+        $("#edad").blur(function () {
+          
+          var edad_usuario = $(this).val();
 
-       if($("#nombre").val()=="" || $("#nombre").val()=="obligatorio el nombre"){
+          if (isNaN(edad_usuario)) {
+            
+            alert("Por favor , introduce un valor numero");
 
-         alert("Por favor completa el nombre"); 
+            $(this).focus();
 
-         return false;
-        
-           }
- 
+            $(this).val("");
+
+            
+          }
         });
 
+
+
+
+        $("#nombre").focus(function () {
+          var campo_nombre = $(this);
+
+          if (campo_nombre.val() == campo_nombre.attr("value")) {
+            campo_nombre.val("");
+          }
+        });
+
+        $("#form_datos").submit(function () {
+          if (
+            $("#nombre").val() == "" ||
+            $("#nombre").val() == "obligatorio el nombre"
+          ) {
+            alert("Por favor completa el nombre");
+
+            $("#nombre").focus();
+
+            return false;
+          }
+        });
+
+        
+        
       });
 
       /*function Comprobar_datos(){
@@ -51,7 +79,6 @@
 
       });*/ // valor de las funciones tipo text
 
-
       /*if($("#deporte").attr("checked")){
 
         alert("te gusta el deporte");
@@ -61,7 +88,6 @@
        }
            // comprueba checbox
 */
-      
     </script>
   </head>
 
@@ -79,7 +105,6 @@
                 name="nombre"
                 id="nombre"
                 value="obligatorio el nombre"
-               
               />
             </td>
           </tr>
