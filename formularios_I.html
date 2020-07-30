@@ -27,25 +27,6 @@
     <script>
       $(document).ready(function () {
 
-        $("#edad").blur(function () {
-          
-          var edad_usuario = $(this).val();
-
-          if (isNaN(edad_usuario)) {
-            
-            alert("Por favor , introduce un valor numero");
-
-            $(this).focus();
-
-            $(this).val("");
-
-            
-          }
-        });
-
-
-
-
         $("#nombre").focus(function () {
           var campo_nombre = $(this);
 
@@ -66,8 +47,49 @@
             return false;
           }
         });
-
         
+        $("#edad").blur(function () {
+          
+          var edad_usuario = $(this).val();
+
+          if (isNaN(edad_usuario)) {
+            
+            alert("Por favor , introduce un valor numero");
+
+            $(this).focus();
+
+            $(this).val("");
+            
+          }
+        });
+
+            $(":radio").click(function(){
+
+              alert($(this).val());
+ 
+            });
+
+            var miArray=[];
+
+            var i=0;
+
+            $(":checkbox").click(function(){
+
+              miArray[i]=$(this).val();
+
+             // alert(" Posicion " +  i  + " " + miArray[i]);
+
+              $("#las_aficiones").append(miArray[i]).append("</br>");
+
+              i++;
+
+});
+
+      $("#pais").change(function(){
+
+    alert("Pais de residencia " + $(this).val());
+
+      })
         
       });
 
@@ -244,5 +266,7 @@
         </table>
       </form>
     </div>
+
+    <div id="las_aficiones"></div>
   </body>
 </html>
