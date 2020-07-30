@@ -26,29 +26,41 @@
 
     <script>
       $(document).ready(function () {
+           
+      //$("#comprobar").click(Comprobar_datos);
 
-      $("#comprobar").click(Comprobar_datos);
+      $("#form_datos").submit(function(){
+
+       if($("#nombre").val()=="" || $("#nombre").val()=="obligatorio el nombre"){
+
+         alert("Por favor completa el nombre"); 
+
+         return false;
+        
+           }
+ 
+        });
 
       });
 
-      function Comprobar_datos(){
+      /*function Comprobar_datos(){
 
-      /*$(":input").each(function(){
+      $(":text").each(function(){
 
         alert($(this).val());
 
-      });*/
+      });*/ // valor de las funciones tipo text
 
 
-      if($("#deporte").attr("checked")){
+      /*if($("#deporte").attr("checked")){
 
         alert("te gusta el deporte");
       }else{
 
          alert("no te gusta el deporte");
        }
-
-      };
+           // comprueba checbox
+*/
       
     </script>
   </head>
@@ -66,7 +78,8 @@
                 type="text"
                 name="nombre"
                 id="nombre"
-                value="Obligatorio nombre"
+                value="obligatorio el nombre"
+               
               />
             </td>
           </tr>
@@ -200,7 +213,7 @@
           </tr>
           <tr>
             <td colspan="2" align="center">
-              <input type="button" value="Comprobar" id="comprobar" />
+              <input type="submit" value="Enviar" id="comprobar" />
             </td>
           </tr>
         </table>
